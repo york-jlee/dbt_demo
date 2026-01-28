@@ -5,7 +5,7 @@ with customers as (
         first_name,
         last_name
 
-    from jaffle_shop_customers
+    from {{ source('jaffle_shop','jaffle_shop_customers') }}
 
 ),
 
@@ -17,7 +17,7 @@ orders as (
         order_date,
         status
 
-    from jaffle_shop_orders
+    from {{ source('jaffle_shop','jaffle_shop_orders') }}
 
 ),
 
