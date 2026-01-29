@@ -6,24 +6,13 @@
 
 with customers as (
 
-    select
-        id as customer_id,
-        first_name,
-        last_name
-
-    from {{ source('jaffle_shop','jaffle_shop_customers') }}
+    select * from {{ ref('stg_customers') }}
 
 ),
 
 orders as (
 
-    select
-        id as order_id,
-        user_id as customer_id,
-        order_date,
-        status
-
-    from {{ source('jaffle_shop','jaffle_shop_orders') }}
+    select * from {{ ref('sgt_orders') }}
 
 ),
 
