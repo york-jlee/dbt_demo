@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: jaffle_shop
-    schema: default
+    schema: bronze
     database: dbt_demo
 
     tables:
